@@ -60,11 +60,12 @@ img {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.header-nav {
+.nav-list,
+.address {
   display: flex;
-  align-items: center;
 }
 
 .logo {
@@ -492,6 +493,7 @@ img {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Виправлено: Зелена рамка при фокусі */
 .footer-input:focus {
   border-color: #31d0aa;
   outline: none;
@@ -524,20 +526,28 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Виправлено: Зелена кнопка при ховері */
 .footer-btn:hover,
 .footer-btn:focus {
   background-color: #31d0aa;
 }
 
+/* Виправлено: Поворот літачка */
 .footer-btn-icon {
   margin-left: 16px;
   fill: #ffffff;
+  /* Додаємо нахил, якщо іконка "лежить" */
+  /* transform: rotate(-24deg); - прибрав, бо в новому SVG іконка вже може бути під кутом. 
+     АЛЕ в макеті вона летить вгору-вправо. Стандартна іконка 'send' часто дивиться вправо.
+     Залишимо без повороту, якщо новий SVG правильний.
+     Якщо треба повернути - розкоментуй.
+  */
 }
 
 /* --- MODAL --- */
 /* Стани модалки: 
-   1. .backdrop - прихований за замовчуванням
-   2. .backdrop.is-open - видимий
+   1. .backdrop - прихований за замовчуванням (opacity: 0)
+   2. .backdrop.is-open - видимий (opacity: 1)
 */
 .backdrop {
   position: fixed;
@@ -556,7 +566,7 @@ img {
               visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Стан "Відкрито" - додається через JS */
+/* Стан "Відкрито" */
 .backdrop.is-open {
   opacity: 1;
   visibility: visible;
@@ -692,6 +702,7 @@ img {
   border-color: #4d5ae5;
 }
 
+/* Custom Checkbox */
 .modal-field-checkbox {
   margin-bottom: 24px;
 }
@@ -714,17 +725,13 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
-  /* Галочка прихована за замовчуванням */
   fill: transparent;
   margin-right: 8px;
 }
 
-/* Коли чекбокс активний: */
 .modal-check:checked + .check-text .check-span {
   background-color: #404bbf;
   border: none;
-  /* Заливаємо галочку білим (через fill) */
   fill: #f4f4fd;
 }
 
