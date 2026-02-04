@@ -535,8 +535,9 @@ img {
 }
 
 /* --- MODAL --- */
-/* Backdrop state logic updated per mentor:
-   Hidden by default (opacity 0), Visible when .is-open is added 
+/* Стани модалки: 
+   1. .backdrop - прихований за замовчуванням
+   2. .backdrop.is-open - видимий
 */
 .backdrop {
   position: fixed;
@@ -546,7 +547,7 @@ img {
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
   
-  /* Hidden state */
+  /* Стан "Приховано" */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -555,7 +556,7 @@ img {
               visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Open state */
+/* Стан "Відкрито" - додається через JS */
 .backdrop.is-open {
   opacity: 1;
   visibility: visible;
@@ -691,7 +692,6 @@ img {
   border-color: #4d5ae5;
 }
 
-/* Custom Checkbox */
 .modal-field-checkbox {
   margin-bottom: 24px;
 }
