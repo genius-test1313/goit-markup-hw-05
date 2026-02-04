@@ -532,6 +532,7 @@ img {
 .footer-btn-icon {
   margin-left: 16px;
   fill: #ffffff;
+  transform: rotate(-24deg);
 }
 
 /* --- MODAL (ИСПРАВЛЕНО: скрыто по умолчанию) --- */
